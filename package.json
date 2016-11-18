@@ -1,0 +1,33 @@
+{
+  "name": "knekshelf",
+  "version": "0.1.0",
+  "author": "Gene Diaz <genediazjr@gmail.com> (http://genediazjr.com)",
+  "description": "Expose raw knex and bookshelf on Hapi",
+  "keywords": [
+    "hapi",
+    "knex",
+    "bookshelf"
+  ],
+  "license": "MIT",
+  "repository": "git://github.com/genediazjr/knekshelf",
+  "bugs": "https://github.com/genediazjr/knekshelf/issues",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "lab -c -v -L -a code",
+    "test-cover": "lab -c -v -L -a code -r html -o ./coverage.html -L && open ./coverage.html"
+  },
+  "peerDependencies": {
+    "bookshelf": ">=0.10.x",
+    "knex": ">=0.12.x"
+  },
+  "devDependencies": {
+    "proxyquire": "1.7.x",
+    "coveralls": "2.11.x",
+    "hapi": "15.2.x",
+    "code": "4.0.x",
+    "lab": "11.1.x"
+  }
+}
