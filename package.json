@@ -16,7 +16,7 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "lab -c -v -L -a code",
+    "test": "lab -c -v -L -a code -l",
     "test-cover": "lab -c -v -L -a code -r html -o ./coverage.html -L && open ./coverage.html"
   },
   "dependencies": {
