@@ -23,7 +23,12 @@ server.register({
             client: 'pg',
             searchPath: 'public',
             connection: 'postgres://postgres:postgres@localhost:5432/postgres'
-        }
+        },
+        plugins: [
+            'registry',
+            'pagination',
+            require('bookshelf-cascade-delete')
+        ]
     }
 });
 

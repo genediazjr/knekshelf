@@ -73,4 +73,35 @@ describe('lib', () => {
             return done();
         });
     });
+
+    it('registers with plugins', (done) => {
+
+        register({
+            knex: {
+                client: 'pg',
+                searchPath: 'public',
+                connection: 'postgres://postgres:postgres@localhost:5432/postgres'
+            },
+            plugins: [
+                'registry',
+                'pagination'
+            ]
+        }, (err) => {
+
+            expect(err).to.not.exist();
+
+            expect(server.plugins.knekshelf.bookshelf).to.exist();
+            expect(server.plugins.knekshelf.knex).to.exist();
+
+            expect(Plugin.ext.bookshelf).to.exist();
+            expect(Plugin.ext.knex).to.exist();
+
+            const Reload = require('..');
+
+            expect(Reload.ext.bookshelf).to.exist();
+            expect(Reload.ext.knex).to.exist();
+
+            return done();
+        });
+    });
 });
