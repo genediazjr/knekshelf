@@ -8,7 +8,35 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/genediazjr/knekshelf/badge.svg)](https://snyk.io/test/github/genediazjr/knekshelf)
 [![NSP Status](https://nodesecurity.io/orgs/genediazjr/projects/2f3cd15e-6779-4c4a-9016-9e1afb457284/badge)](https://nodesecurity.io/orgs/genediazjr/projects/2f3cd15e-6779-4c4a-9016-9e1afb457284)
 
-Expose raw knex and bookshelf on Hapi
+Expose raw knex and bookshelf on Hapi.
+
+## Usage
+
+```js
+const Knekshelf = require('knekshelf');
+const server = new Hapi.Server();
+
+server.register({
+    register: Knekshelf,
+    options: {
+        knex: {
+            client: 'pg',
+            searchPath: 'public',
+            connection: 'postgres://postgres:postgres@localhost:5432/postgres'
+        }
+    }
+});
+
+// available through server.plugins
+server.plugins.knekshelf.bookshelf
+server.plugins.knekshelf.knex
+
+// available through plugin
+Knekshelf.ext.bookshelf
+Knekshelf.ext.ext
+```
+
+`pg` was used for testing.
 
 ## Contributing
 * Include 100% test coverage.
