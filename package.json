@@ -19,15 +19,15 @@
     "test": "lab -c -v -L -a code",
     "test-cover": "lab -c -v -L -a code -r html -o ./coverage.html -L && open ./coverage.html"
   },
-  "peerDependencies": {
-    "bookshelf": ">=0.10.x",
-    "knex": ">=0.12.x"
+  "dependencies": {
+    "bookshelf": "0.10.x",
+    "knex": "0.12.x"
   },
   "devDependencies": {
-    "proxyquire": "1.7.x",
     "coveralls": "2.11.x",
     "hapi": "15.2.x",
     "code": "4.0.x",
-    "lab": "11.1.x"
+    "lab": "11.1.x",
+    "pg": "6.1.x"
   }
 }
