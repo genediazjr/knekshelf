@@ -74,6 +74,34 @@ describe('lib', () => {
         });
     });
 
+    it('registers option with suffix', (done) => {
+
+        register({
+            suffix: 'Test',
+            knex: {
+                client: 'pg',
+                searchPath: 'public',
+                connection: 'postgres://postgres:postgres@localhost:5432/postgres'
+            }
+        }, (err) => {
+
+            expect(err).to.not.exist();
+
+            expect(server.plugins.knekshelf.bookshelfTest).to.exist();
+            expect(server.plugins.knekshelf.knexTest).to.exist();
+
+            expect(Plugin.ext.bookshelfTest).to.exist();
+            expect(Plugin.ext.knexTest).to.exist();
+
+            const Reload = require('..');
+
+            expect(Reload.ext.bookshelfTest).to.exist();
+            expect(Reload.ext.knexTest).to.exist();
+
+            return done();
+        });
+    });
+
     it('registers with plugins', (done) => {
 
         register({
@@ -87,6 +115,35 @@ describe('lib', () => {
                 'pagination'
             ]
         }, (err) => {
+
+            expect(err).to.not.exist();
+
+            expect(server.plugins.knekshelf.bookshelf).to.exist();
+            expect(server.plugins.knekshelf.knex).to.exist();
+
+            expect(Plugin.ext.bookshelf).to.exist();
+            expect(Plugin.ext.knex).to.exist();
+
+            const Reload = require('..');
+
+            expect(Reload.ext.bookshelf).to.exist();
+            expect(Reload.ext.knex).to.exist();
+
+            return done();
+        });
+    });
+
+    it('registers with array options', (done) => {
+
+        register([
+            {
+                knex: {
+                    client: 'pg',
+                    searchPath: 'public',
+                    connection: 'postgres://postgres:postgres@localhost:5432/postgres'
+                }
+            }
+        ], (err) => {
 
             expect(err).to.not.exist();
 
