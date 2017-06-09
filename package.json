@@ -1,6 +1,6 @@
 {
   "name": "knekshelf",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Gene Diaz <genediazjr@gmail.com> (http://genediazjr.com)",
   "description": "Expose raw knex and bookshelf on Hapi",
   "keywords": [
