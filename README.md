@@ -6,7 +6,6 @@
 [![NPM Downloads](https://img.shields.io/npm/dt/knekshelf.svg?maxAge=2592000)](https://www.npmjs.com/knekshelf)<br>
 [![Dependency Status](https://david-dm.org/genediazjr/knekshelf.svg)](https://david-dm.org/genediazjr/knekshelf)
 [![Known Vulnerabilities](https://snyk.io/test/github/genediazjr/knekshelf/badge.svg)](https://snyk.io/test/github/genediazjr/knekshelf)
-[![NSP Status](https://nodesecurity.io/orgs/genediazjr/projects/2f3cd15e-6779-4c4a-9016-9e1afb457284/badge)](https://nodesecurity.io/orgs/genediazjr/projects/2f3cd15e-6779-4c4a-9016-9e1afb457284)
 
 Expose raw knex and bookshelf on Hapi.
 
