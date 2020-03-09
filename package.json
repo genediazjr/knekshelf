@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "bookshelf": "0.10.x",
-    "knex": "0.13.x"
+    "knex": "0.19.x"
   },
   "devDependencies": {
     "coveralls": "2.13.x",
